@@ -1,0 +1,48 @@
+﻿<div class="row">
+	<div class="col-xs-3">
+		<div class="photo">
+			<img src="assets/images/lang.png" alt="photo" />
+		</div>
+	</div>
+	<div class="col-xs-9">
+		<h3>Jiyuan Wang &nbsp; 王纪元</h3>
+		<p>
+			I am a first-year Ph.D.(Bachlor-straight-to-doctorate) student at Beijing
+			Jiaotong University (<a href="https://bjtu.edu.cn/">BJTU</a>) in
+			<a href="http://mepro.bjtu.edu.cn/researcher.html"> MePro</a> (led by
+			Prof. <a href="http://faculty.bjtu.edu.cn/5900/">Yao Zhao</a>), supervised
+			by Prof. <a href="http://faculty.bjtu.edu.cn/8549/">Chunyu Lin</a>. Prior
+			to that, I received my undergraduate degree at
+			<i>Computer Science and Technology</i> from BJTU.
+		</p>
+		<p>
+			Recently I am looking for a research intern position with a special
+			interest in 3D perception and deep learning. 
+			<!-- Here is my
+			<a
+				href="https://github.com/nie-lang/nie-lang.github.io/blob/main/assets/pdf/CV_Lang_Nie.pdf"
+				target="_blank"
+				>resume</a
+			>. -->
+		</p>
+		<p></p>
+
+		<h3 style="padding-top: -5px"></h3>
+
+		{% if site.email %}
+		<a href="mailto: {{wangjiyuan@bjtu.edu.cn}}"
+			><i class="fa fa-envelope"></i> &nbsp; {{site.email}}</a
+		>
+		{% endif %} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {% if site.website_google %}
+		<a
+			href="https://scholar.google.com/citations?hl=zh-CN&user=subRjlcAAAAJ"
+			target="_blank"
+			><i class="fa fa-globe"></i> &nbsp; {{site.website_google}}</a
+		>
+		{% endif %} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {% if site.github %}
+		<a href="https://github.com/wangjiyuan9" target="_blank"
+			><i class="fa fa-github"></i> &nbsp; {{site.github}}</a
+		>
+		{% endif %}
+	</div>
+</div>
