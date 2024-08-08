@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherKITTI</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYX00ZNY9V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-YYX00ZNY9V');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Maison+Mono" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">WeatherKITTI Dataset </h1>
+                    <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://wangjiyuan9.github.io/" target="_blank">Jiyuan Wang</a>,</span>
+                        <span class="author-block">
+                <a href="https://nie-lang.github.io/" target="_blank">Chunyu Lin</a>,</span>
+                        <span class="author-block">
+                <a href="https://chunyu-lin-bjtu.github.io/" target="_blank">Lang Nie</a></span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Beijing jiaotong University</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- arXiv Link. -->
+                            <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.09831" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>D4RD</span>
+                  </a>
+                </span>
+                            <!-- arXiv Link. -->
+                            <span class="link-block">
+                  <a href="https://arxiv.org/abs/2310.05556" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>WeatherDepth</span>
+                  </a>
+                </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://github.com/wangjiyuan9/WeatherDepth" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>WeatherDepth</span>
+                  </a>
+                </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://github.com/wangjiyuan9/D4RD" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>D4RD</span>
+                  </a>
+                </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section" style="padding-bottom: 0px; padding-top: 0px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-justified">
+            <div class="column is-two-thirds">
+                <p>
+                    <b>WeatherKITTI</b> is currently the most realistic all-weather simulated enhancement of the KITTI dataset. The WeatherKITTI dataset simulates the three weather conditions that most affect visual perception in real-world scenarios: rain, snow, and fog. Each type of weather has two intensity levels: severe and extremely severe. Together with clear weather, these two levels create a weather-enhanced dataset featuring three levels and seven weather scenarios.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="text-align: center;">
+    <img src="static/images/pipline.png" style="padding: 2rem 0rem 0rem 0rem; width: 800px;">
+</div>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="has-text-centered content">
+            <h2 class="title is-3">Questions and Answer & Some Comparison</h2>
+        </div>
+        <p style="text-align: left; padding: 0rem 0rem 2rem 0rem;">
+            <b>Q: Why not use diffusion models instead of the older GAN models? </b></p>
+        <p style="text-align: left; padding: 0rem 0rem 2rem 0rem;">
+            A: The reason is that current diffusion models struggle with maintaining texture and object consistency. I initially tried using diffusion models for rendering WeatherKITTI, but I abandoned the approach because diffusion altered the scenes themselves. Although some papers have attempted this method and even presented it as a contribution, I respectfully disagree. The image below illustrates the difference between diffusion-based rendering and the GAN+PBR-based approach:
+        </p>
+        <div class="has-text-centered" id="stitch1">
+            <img src="static/images/dfs.png" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+            <p class="prompt"><b>Diffusion-based Rendering</b></p>
+            <img src="static/images/gan.png" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+            <p class="prompt"><b>GAN-based Rendering</b></p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="has-text-centered content">
+            <h2 class="title is-3" id="warping_results">Download the Dataset</h2>
+            <p style="text-align: left;">
+                <b>Depth Estimation:</b> This dataset is currently rendered specifically for depth estimation tasks. For other tasks, you can try to reuse the data within the Eigen training, validation, and testing splits.</p>
+
+            <p style="text-align: left;">
+                <b>Test Split.</b> If you want to:
+            </p>
+            <ul style="text-align: left;">
+                <li>Perform zero-shot testing to validate your model's robustness</li>
+                <li>Compare with existing WeatherKITTI and D4RD models</li>
+                <li>Evaluate the robustness of other models</li>
+            </ul>
+            <p style="text-align: left;">
+                You can opt to download only the test set, which is the standard Eigen split test set, consisting of 697 images with a total size of approximately 3GB:
+            </p>
+            <!-- Cloud Link. -->
+            <span class="link-block">
+                <a href="https://pan.baidu.com/s/1pew0QV3Tza-_JdalC8F0jQ?pwd=v4dt#list/path=%2F" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/baidu.png">
+                  </span>
+                  <span>&nbsp;Test Dataset</span>
+                </a>
+              </span>
+            <p style="text-align: left;">
+                <b>Full Dataset.</b> If you want to:
+            </p>
+            <ul style="text-align: left;">
+                <li>Reproduce WeatherKITTI, D4RD or train your model from scratch</li>
+                <li>Perform fine-tuning</li>
+                <li>Conduct other research</li>
+            </ul>
+            <p style="text-align: left;">
+                You can download the full dataset, which includes the Eigen training, validation, and test splits, with a total size of approximately 200GB:
+            </p>
+            <!-- Cloud Link. -->
+            <span class="link-block">
+                <a href="https://pan.baidu.com/s/1kE_hqyQs05NUp2Eprjj3QQ?pwd=3adl " target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/baidu.png">
+                  </span>
+                  <span>&nbsp;Full Dataset</span>
+                </a>
+                </span>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <div class="columns is-centered has-text-justified">
+            <div class="column is-four-fifths">
+                <h2 class="title">BibTeX</h2>
+                <pre>
+<code>@article{wang2023weatherdepth,
+  title={Weatherdepth: Curriculum contrastive learning for self-supervised depth estimation under adverse weather conditions},
+  author={Wang, Jiyuan and Lin, Chunyu and Nie, Lang and Huang, Shujun and Zhao, Yao and Pan, Xing and Ai, Rui},
+  journal={arXiv preprint arXiv:2310.05556},
+  year={2023}
+}
+@article{wang2024digging,
+  title={Digging into contrastive learning for robust depth estimation with diffusion models},
+  author={Wang, Jiyuan and Lin, Chunyu and Nie, Lang and Liao, Kang and Shao, Shuwei and Zhao, Yao},
+  journal={arXiv preprint arXiv:2404.09831},
+  year={2024}
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+                <p>
+                    We borrow the source code of this website from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> which is licensed
+                    under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+
+
+<!-- Change call to action under interactive viz if on mobile -->
+<script>
+    if (navigator.userAgent.match(/Mobile/)) {
+        var paragraphs = document.querySelectorAll('p.hoverMe');
+        paragraphs.forEach(paragraph => {
+                paragraph.textContent = "(Tap and drag me)"
+            }
+        );
+    }
+</script>
+</body>
+
+</html>
